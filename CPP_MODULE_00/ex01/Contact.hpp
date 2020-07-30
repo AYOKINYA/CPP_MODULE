@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/30 16:44:58 by jkang             #+#    #+#             */
-/*   Updated: 2020/07/30 17:36:10 by jkang            ###   ########.fr       */
+/*   Created: 2020/07/30 16:49:25 by jkang             #+#    #+#             */
+/*   Updated: 2020/07/30 17:04:49 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <iomanip>
 # include <string>
-# include "Contact.hpp"
 
-class		Phonebook
+class	Contact
 {
 	private:
-		Contact contacts[8];
-		int		count;
+		std::string	items[11];
+		std::string prints[11];
 
-    public:
-		Phonebook();
-        void    add_contact(void);
-        void    search_contact(void);
-		bool	validate_search_input(std::string idx);
-		void	current_status(void);
-		~Phonebook();
+	public:
+		Contact();
+		void		print_item(void);
+		void		print_overview(int idx);
+		void		set_items(void);
+		~Contact();
 };
 
-# endif
+#endif

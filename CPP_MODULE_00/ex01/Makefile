@@ -5,6 +5,8 @@ CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS =  phonebook.cpp \
+		contact.cpp \
+		exec_input.cpp
 
 
 OBJS = $(SRCS:.c=.o)
