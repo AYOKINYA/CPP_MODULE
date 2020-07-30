@@ -4,16 +4,15 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =  phonebook.cpp \
-		contact.cpp \
-		exec_input.cpp
+SRCS =  Phonebook.cpp \
+		Contact.cpp \
+		Exec_input.cpp
 
-
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
-%.o : %.c
+%.o : %.cpp
 		${CC} ${CFLAGS} -c $< -o $@
 
 $(NAME) : ${OBJS}
