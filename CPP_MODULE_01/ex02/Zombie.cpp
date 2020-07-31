@@ -9,7 +9,7 @@ class Zombie
 			std::string speech;
 	public:
 			Zombie() : type("CRAZY"), name("zmb"), speech("Braiiiiiiinnnssss...") {};
-			Zombie(std::string type = "CRAZY", std::string name="zmb", std::string speech="Braiiiiiiinnnssss...")
+			Zombie(const std::string &type = "CRAZY", const std::string &name="zmb", const std::string &speech="Braiiiiiiinnnssss...")
 			: type(type), name(name), speech(speech) {};
 			~Zombie();
 			std::string	get_type(void);
