@@ -25,27 +25,27 @@ unsigned int Pony::get_height(void)
 	return (this->height);
 }
 
-void Pony::set_name(std::string new_name)
+void 		Pony::set_name(std::string new_name)
 {
 	this->name = new_name;
 }
 
-void Pony::set_fur_color(std::string new_fur_color)
+void 		Pony::set_fur_color(std::string new_fur_color)
 {
 	this->fur_color = new_fur_color;
 }
 
-void Pony::set_height(unsigned int new_height)
+void 		Pony::set_height(unsigned int new_height)
 {
 	this->height = new_height;
 }
 
-void	Pony::walk(void)
+void		Pony::walk(void)
 {
 	std::cout << this->name << " is walking." << std::endl;
 }
 
-void	Pony::jump(void)
+void		Pony::jump(void)
 {
 	std::cout << this->name << " is jumping." << std::endl;
 }
