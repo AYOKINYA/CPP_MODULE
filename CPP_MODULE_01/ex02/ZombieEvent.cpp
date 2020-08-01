@@ -1,20 +1,4 @@
-#include <iostream>
-#include <string>
-
-class ZombieEvent
-{
-	private:
-			std::string	m_type;
-	public:
-			void		setZombieType(std::string type);
-			Zombie*		newZombie(std::string name);
-};
-
-ZombieEvent::ZombieEvent()
-{}
-
-ZombieEvent::~ZombieEvent()
-{}
+#include "ZombieEvent.hpp"
 
 void	ZombieEvent::setZombieType(std::string type)
 {
@@ -23,6 +7,22 @@ void	ZombieEvent::setZombieType(std::string type)
 
 Zombie*		ZombieEvent::newZombie(std::string name)
 {
-	Zombie* zombie = new Zombie(this->type, this->name);
+	Zombie* zombie = new Zombie(this->m_type, name);
+	return (zombie);
+}
+
+Zombie*		ZombieEvent::randomChump(void)
+{
+	int			r;
+	std::string	name;
+	Zombie*		zombie;
+
+	name = "";
+	for (int i = 0; i < 10; ++i)
+	{
+		r = rand() % 26;
+		name += 'a' + r;
+	}
+	zombie = new Zombie(this->m_type, name);
 	return (zombie);
 }
