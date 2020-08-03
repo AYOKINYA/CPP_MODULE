@@ -4,7 +4,7 @@
 
 int ft_error(std::string msg, int ret)
 {
-	std::cout << msg << std::endl;
+	std::cerr << msg << std::endl;
 	return (ret);
 }
 
