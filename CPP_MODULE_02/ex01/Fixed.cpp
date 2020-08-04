@@ -3,8 +3,8 @@
 Fixed& Fixed::operator= (const Fixed &fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	// if (this == &fixed)
-	// 	return (*this);
+	if (this == &fixed)
+		return (*this);
 	this->value = fixed.value;
 
 	return (*this);
