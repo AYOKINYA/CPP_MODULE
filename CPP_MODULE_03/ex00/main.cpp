@@ -19,6 +19,10 @@ int main(void)
 	b.show_status_quo();
 	a.takeDamage(50);
 	a.show_status_quo();
+	a.beRepaired(10);
+	a.show_status_quo();
+	a.beRepaired(1000);
+	a.show_status_quo();
 
 	c.vaulthunter_dot_exe("B");
 	c.show_status_quo();
@@ -26,5 +30,6 @@ int main(void)
 	b.show_status_quo();
 
 	b.vaulthunter_dot_exe("A");
+
 	return (0);
 }
