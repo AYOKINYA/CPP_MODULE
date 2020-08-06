@@ -9,7 +9,7 @@ Sorcerer::Sorcerer(std::string name, std::string title) : name(name), title(titl
 
 Sorcerer::~Sorcerer()
 {
-	std::cout << this->name << ", " << this->title << std::endl;
+	std::cout << this->name << ", " << this->title;
 	std::cout << ", is dead. Consequences will never be the same!" << std::endl;
 }
 
@@ -26,21 +26,22 @@ Sorcerer& Sorcerer::operator= (const Sorcerer &sorcerer)
 
 std::ostream& operator<< (std::ostream& out, const Sorcerer& sorcerer)
 {
-	out << "I am " << sorcerer.get_name() << ", " << sorcerer.get_title() << ", and I like ponies!";
+	out << "I am " << sorcerer.get_name() << ", "; 
+	out << sorcerer.get_title() << ", and I like ponies!" << std::endl;
 	return (out);
 }
 
-std::string	Sorcerer::get_name(void)
+std::string	Sorcerer::get_name(void) const
 {
 	return (this->name);
 }
 
-std::string	Sorcerer::get_title(void)
+std::string	Sorcerer::get_title(void) const
 {
 	return (this->title);
 }
 
-void	Sorcerer::polymorph(Victim const &victim) const;
+void	Sorcerer::polymorph(Victim const &victim) const
 {
 	victim.getPolymorphed();
 }

@@ -1,5 +1,7 @@
 #ifndef PEON_HPP
 # define PEON_HPP
+# include <string>
+# include <iostream>
 # include "Victim.hpp"
 
 class Peon : public Victim
@@ -10,7 +12,7 @@ class Peon : public Victim
 			Peon(const Peon &copy);
 			Peon& operator= (const Peon &peon);
 			~Peon();
-			void    	getPolymorphed() const;
+			virtual void	getPolymorphed() const;
 			std::string	get_name(void) const;
 	private:
 			std::string name;

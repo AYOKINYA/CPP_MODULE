@@ -22,7 +22,7 @@ std::ostream& operator<< (std::ostream& out, const Peon &peon)
     return (out);
 }
 
-Peon::getPolymorphed() const
+void	Peon::getPolymorphed() const
 {
 	std::cout << this->name << " has been turned into a pink pony!" << std::endl;
 }
