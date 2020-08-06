@@ -11,11 +11,12 @@ class Victim
 			Victim(const Victim &copy);
 			Victim& operator= (const Victim &victim);
 			~Victim();
-            void    getPolymorphed() const;
-	private:
+            void        getPolymorphed() const;
+            std::string	get_name(void) const;
+	protected:
 			std::string name;
 };
 
-std::ostream& operator<< (const Victim &victim);
+std::ostream& operator<< (std::ostream& out, const Victim &victim);
 
 #endif

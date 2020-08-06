@@ -26,7 +26,7 @@ Sorcerer& Sorcerer::operator= (const Sorcerer &sorcerer)
 
 std::ostream& operator<< (std::ostream& out, const Sorcerer& sorcerer)
 {
-	out << "I am " << this->name << ", " << this->title << ", and I like ponies!";
+	out << "I am " << sorcerer.get_name() << ", " << sorcerer.get_title() << ", and I like ponies!";
 	return (out);
 }
 
