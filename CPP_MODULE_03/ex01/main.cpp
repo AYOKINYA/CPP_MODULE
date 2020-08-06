@@ -32,6 +32,8 @@ int main(void)
 
 	b.vaulthunter_dot_exe("A");
 
+	std::cout << "=====================" << std::endl;
+ 
     ScavTrap j("J");
 	ScavTrap k = ScavTrap("K");
 	ScavTrap tmp2("L");

@@ -1,5 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main(void)
 {
@@ -8,7 +10,7 @@ int main(void)
 	FragTrap tmp("C");
 	FragTrap c(tmp);
 
-	a.FragTrap::rangedAttack("B");
+	a.rangedAttack("B");
 	b.takeDamage(20);
 	b.show_status_quo();
 
@@ -31,8 +33,8 @@ int main(void)
 	b.show_status_quo();
 
 	b.vaulthunter_dot_exe("A");
-
 	std::cout << "=====================" << std::endl;
+
     ScavTrap j("J");
 	ScavTrap k = ScavTrap("K");
 	ScavTrap tmp2("L");
@@ -58,15 +60,42 @@ int main(void)
 	k.takeDamage(500);
 	k.show_status_quo();
     std::cout << "=====================" << std::endl;
+	
+	NinjaTrap	q("Q");
+	NinjaTrap	p("P");
+	
+	q.rangedAttack("P");
+	p.takeDamage(20);
+	p.show_status_quo();
+
+	q.takeDamage(500);
+	q.show_status_quo();
+	q.beRepaired(10);
+	q.show_status_quo();
+	q.beRepaired(1000);
+	q.show_status_quo();
 
 	ClapTrap x("X");
 
-	x.takeDamage(5000);
-	x.show_status_quo();
-	x.beRepaired(10);
-	x.show_status_quo();
-	x.beRepaired(1000);
-	x.show_status_quo();
+	q.ninjaShoebox(a);
+	q.ninjaShoebox(j);
+	q.ninjaShoebox(x);
+	q.ninjaShoebox(p);
+
+	std::cout << "=====================" << std::endl;
+	
+	SuperTrap s("S");
+	s.show_status_quo();
+	s.takeDamage(50);
+	s.takeDamage(300);
+	s.beRepaired(1000);
+
+	s.vaulthunter_dot_exe("XXX");
+	s.ninjaShoebox(a);
+	s.ninjaShoebox(j);
+	s.ninjaShoebox(x);
+	s.ninjaShoebox(p);
+	std::cout << "=====================" << std::endl;
 
     return (0);
 }

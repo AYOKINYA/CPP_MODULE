@@ -1,5 +1,6 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main(void)
 {
@@ -8,7 +9,7 @@ int main(void)
 	FragTrap tmp("C");
 	FragTrap c(tmp);
 
-	a.FragTrap::rangedAttack("B");
+	a.rangedAttack("B");
 	b.takeDamage(20);
 	b.show_status_quo();
 
@@ -32,6 +33,7 @@ int main(void)
 
 	b.vaulthunter_dot_exe("A");
 
+	std::cout << "=================" << std::endl;
     ScavTrap j("J");
 	ScavTrap k = ScavTrap("K");
 	ScavTrap tmp2("L");
@@ -56,6 +58,28 @@ int main(void)
 	l.challengeNewcomer();
 	k.takeDamage(500);
 	k.show_status_quo();
-    
+	
+    std::cout << "=================" << std::endl;
+
+	NinjaTrap	q("Q");
+	NinjaTrap	p("P");
+	
+	q.rangedAttack("P");
+	p.takeDamage(20);
+	p.show_status_quo();
+
+	q.takeDamage(500);
+	q.show_status_quo();
+	q.beRepaired(10);
+	q.show_status_quo();
+	q.beRepaired(1000);
+	q.show_status_quo();
+
+	ClapTrap x("X");
+
+	q.ninjaShoebox(a);
+	q.ninjaShoebox(j);
+	q.ninjaShoebox(x);
+	q.ninjaShoebox(p);
     return (0);
 }

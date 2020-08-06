@@ -9,7 +9,7 @@
 # include <cstdlib>
 # include <ctime>
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 	public:
 			NinjaTrap();
