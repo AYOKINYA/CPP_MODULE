@@ -1,23 +1,7 @@
-#include <string>
-#include <iostream>
+#include "AWeapon.hpp"
 
-class AWeapon
-{
-	private:
-			std::string name;
-			int			apcost;
-			int			damage;
-	public:
-			AWeapon() {};
-			AWeapon(std::string const &name, int apcost, int damage);
-			Aweapon(const Aweapon &copy);
-			Aweapon& operator=(const Aweapon &aweapon);
-			virtual ~Aweapon() {};
-			std::string getName() const;
-			int getAPCost() const;
-			int getDamage() const;
-			virtual void attack() const = 0;
-};
+AWeapon::AWeapon()
+{};
 
 AWeapon::AWeapon(std::string const &name, int apcost, int damage) :
 			name(name), apcost(apcost), damage(damage) {};
@@ -27,7 +11,7 @@ AWeapon::AWeapon(const AWeapon& copy)
 	*this = copy;	
 }
 
-AWeapon& AWeapon::operator= (const Aweapon &aweapon)
+AWeapon& AWeapon::operator= (const AWeapon &aweapon)
 {
 	if (this == &aweapon)
 		return (*this);
@@ -37,7 +21,10 @@ AWeapon& AWeapon::operator= (const Aweapon &aweapon)
 	return (*this);
 }
 
-std::string AWeapon::getName() const
+AWeapon::~AWeapon()
+{};
+
+std::string const AWeapon::getName() const
 {
 	return (this->name);
 }

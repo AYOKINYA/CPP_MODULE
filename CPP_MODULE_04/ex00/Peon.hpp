@@ -7,7 +7,6 @@
 class Peon : public Victim
 {
 	public:
-			Peon();
 			Peon(std::string name);
 			Peon(const Peon &copy);
 			Peon& operator= (const Peon &peon);
@@ -15,7 +14,8 @@ class Peon : public Victim
 			virtual void	getPolymorphed() const;
 			std::string	get_name(void) const;
 	private:
-			std::string name;
+			Peon();
+			//std::string name; I use public memeber variable name from Victim!
 };
 
 std::ostream& operator<< (std::ostream& out, const Peon &peon);

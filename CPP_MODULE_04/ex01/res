@@ -1,0 +1,38 @@
+12,14c12,14
+< 			std::string name;
+< 			int AP;
+< 			AWeapon *current_weapon;
+---
+> 			std::string	name;
+> 			int			AP:
+> 			AWeapon* current_weapon;
+17,18c17,18
+< 			Character(std::string const &name);
+< 			Character(Character const &copy);
+---
+> 			Character(std::string const & name);
+> 			Character(const Character &copy);
+21,24c21,24
+< 			Character &operator=(Character const &character);
+< 
+< 			std::string const getName(void) const;
+< 			int getAP(void) const;
+---
+> 			Character &operator=(const Character &character);
+> 			
+> 			std::string const	getName() const;
+> 			int					getAP() const;
+26,29c26,29
+< 
+< 			void recoverAP(void);
+< 			void equip(AWeapon *weapon);
+< 			void attack(Enemy *enemy);
+---
+> 			
+> 			void				recoverAP();
+> 			void				equip(AWeapon* aweapon);
+> 			void				attack(Enemy* enemy);
+32c32
+< std::ostream &operator<<(std::ostream &out, const Character &character);
+---
+> std::ostream& operator<<(std::ostream& out, const Character &character);

@@ -6,7 +6,6 @@
 class Victim
 {
 	public:
-			Victim();
 			Victim(std::string name);
 			Victim(const Victim &copy);
 			Victim& operator= (const Victim &victim);
@@ -14,6 +13,7 @@ class Victim
             virtual void	getPolymorphed() const;
             std::string		get_name(void) const;
 	protected:
+			Victim();
 			std::string name;
 };
 
