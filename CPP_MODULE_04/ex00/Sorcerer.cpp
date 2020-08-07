@@ -1,7 +1,5 @@
 #include "Sorcerer.hpp"
 
-std::ostream& operator<<(std::ostream& out, const Sorcerer &sorcerer);
-
 Sorcerer::Sorcerer(std::string name, std::string title) : name(name), title(title)
 {
 	std::cout << this->name << ", " << this->title << ", is born!" << std::endl;
@@ -11,6 +9,12 @@ Sorcerer::~Sorcerer()
 {
 	std::cout << this->name << ", " << this->title;
 	std::cout << ", is dead. Consequences will never be the same!" << std::endl;
+}
+
+Sorcerer::Sorcerer(const Sorcerer &copy)
+{
+	*this = copy;
+	std::cout << this->name << ", " << this->title << ", is born!" << std::endl;
 }
 
 Sorcerer& Sorcerer::operator= (const Sorcerer &sorcerer)

@@ -11,9 +11,24 @@ Peon::Peon(std::string name) : Victim(name)
 	std::cout << "Zog zog." << std::endl;
 }
 
+Peon::Peon(const Peon &copy)
+{
+	*this = copy;
+	std::cout << "Zog zog." << std::endl;
+}
+
 Peon::~Peon()
 {
 	std::cout << "Bleuark..." << std::endl;
+}
+
+Peon& Peon::operator= (const Peon &peon)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	if (this == &peon)
+		return (*this);
+	this->name = peon.name;
+	return (*this);
 }
 
 std::ostream& operator<< (std::ostream& out, const Peon &peon)
