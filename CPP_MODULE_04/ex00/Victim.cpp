@@ -21,9 +21,18 @@ Victim::~Victim()
 	std::cout << " just died for no apparent reason!" << std::endl;
 }
 
+Victim::Victim(const Victim &copy)
+{
+	*this = copy;
+	std::cout << "Some random victim called ";
+	std::cout << this->name; 
+	std::cout << " just appeared!" << std::endl;
+}
+
 Victim& Victim::operator= (const Victim &victim)
 {
-    if (this == &victim)
+    std::cout << "Assignation operator called" << std::endl;
+	if (this == &victim)
         return (*this);
     this->name = victim.name;
 
