@@ -22,6 +22,8 @@ Tactical& Squad::operator=(Squad const &copy)
 		elem = elem->next;
 		free(before);
 	}
+	this->marines = nullptr;
+	this->n_input = 0;
 	elem = copy.marines;
 	while (elem != 0)
 	{
