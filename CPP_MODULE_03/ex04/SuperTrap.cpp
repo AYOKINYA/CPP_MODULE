@@ -20,7 +20,7 @@ SuperTrap::SuperTrap(std::string Name): FragTrap(Name), NinjaTrap(Name)
 	std::cout << "A SuperTrap is constructed." << std::endl;
 }
 
-SuperTrap::SuperTrap(const SuperTrap& copy)
+SuperTrap::SuperTrap(const SuperTrap& copy) : FragTrap(copy), NinjaTrap(copy)
 {
 	std::cout << "A copy constructor of SuperTrap is called." << std::endl;
 	*this = copy;
@@ -30,7 +30,8 @@ SuperTrap& SuperTrap::operator= (const SuperTrap &SuperTrap)
 {
 	if (this == &SuperTrap)
 		return (*this);
-
+	FragTrap::operator=(SuperTrap);
+	NinjaTrap::operator=(SuperTrap);
 	this->Hit_points = SuperTrap.Hit_points;
 	this->Max_hit_points = SuperTrap.Max_hit_points;
 	this->Energy_points = SuperTrap.Energy_points;

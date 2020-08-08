@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
 	std::cout << "A ScavTrap is constructed." << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy)
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 {
 	std::cout << "A copy constructor of ScavTrap is called." << std::endl;
 	*this = copy;
@@ -30,7 +30,7 @@ ScavTrap& ScavTrap::operator= (const ScavTrap &ScavTrap)
 {
 	if (this == &ScavTrap)
 		return (*this);
-
+	ClapTrap::operator=(ScavTrap);
 	this->Hit_points = ScavTrap.Hit_points;
 	this->Max_hit_points = ScavTrap.Max_hit_points;
 	this->Energy_points = ScavTrap.Energy_points;

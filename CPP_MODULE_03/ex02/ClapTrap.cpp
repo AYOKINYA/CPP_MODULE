@@ -104,7 +104,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << " is repaired with Energy_points ";
 	std::cout << amount << std::endl;
 
-	if (this->Energy_points + amount > this->Max_energy_points)
+	if (this->Energy_points + amount > (unsigned int)this->Max_energy_points)
 		this->Energy_points = this->Max_energy_points;
 	else
 		this->Energy_points += amount;

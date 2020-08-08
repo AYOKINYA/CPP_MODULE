@@ -20,7 +20,7 @@ FragTrap::FragTrap(std::string Name): ClapTrap(Name)
 	std::cout << "A FragTrap is constructed." << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& copy)
+FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy)
 {
 	std::cout << "A copy constructor of FragTrap is called." << std::endl;
 	*this = copy;
@@ -30,7 +30,7 @@ FragTrap& FragTrap::operator= (const FragTrap &fragtrap)
 {
 	if (this == &fragtrap)
 		return (*this);
-
+	ClapTrap::operator=(fragtrap);
 	this->Hit_points = fragtrap.Hit_points;
 	this->Max_hit_points = fragtrap.Max_hit_points;
 	this->Energy_points = fragtrap.Energy_points;

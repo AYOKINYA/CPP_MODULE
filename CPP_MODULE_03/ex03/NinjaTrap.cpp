@@ -20,7 +20,7 @@ NinjaTrap::NinjaTrap(std::string Name): ClapTrap(Name)
 	std::cout << "A NinjaTrap is constructed." << std::endl;
 }
 
-NinjaTrap::NinjaTrap(const NinjaTrap& copy)
+NinjaTrap::NinjaTrap(const NinjaTrap& copy) : ClapTrap(copy)
 {
 	std::cout << "A copy constructor of NinjaTrap is called." << std::endl;
 	*this = copy;
@@ -30,7 +30,7 @@ NinjaTrap& NinjaTrap::operator= (const NinjaTrap &NinjaTrap)
 {
 	if (this == &NinjaTrap)
 		return (*this);
-
+	ClapTrap::operator=(NinjaTrap);
 	this->Hit_points = NinjaTrap.Hit_points;
 	this->Max_hit_points = NinjaTrap.Max_hit_points;
 	this->Energy_points = NinjaTrap.Energy_points;
