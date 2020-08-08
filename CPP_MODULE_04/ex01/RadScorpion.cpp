@@ -5,7 +5,7 @@ RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
 	std::cout << "* click click click *" << std::endl;
 }
 
-RadScorpion::RadScorpion(const RadScorpion &copy)
+RadScorpion::RadScorpion(const RadScorpion &copy) : Enemy(80, "RadScorpion")
 {
 	*this = copy;
 }

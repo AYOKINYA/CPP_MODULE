@@ -11,7 +11,7 @@ class PowerFist : public AWeapon
 			PowerFist(const PowerFist &copy);
 			PowerFist &operator=(const PowerFist &powerfist);
 			virtual ~PowerFist();
-			void	attack() const override;
+			void	attack() const;
 };
 
 #endif

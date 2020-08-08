@@ -3,7 +3,7 @@
 PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
 {}
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle& copy)
+PlasmaRifle::PlasmaRifle(const PlasmaRifle& copy) : AWeapon("Plasma Rifle", 5, 21)
 {
 	*this = copy;
 }

@@ -11,7 +11,7 @@ Peon::Peon(std::string name) : Victim(name)
 	std::cout << "Zog zog." << std::endl;
 }
 
-Peon::Peon(const Peon &copy)
+Peon::Peon(const Peon &copy) : Victim(copy)
 {
 	*this = copy;
 	std::cout << "Zog zog." << std::endl;
@@ -27,6 +27,7 @@ Peon& Peon::operator= (const Peon &peon)
 	std::cout << "Assignation operator called" << std::endl;
 	if (this == &peon)
 		return (*this);
+	Victim::operator=(peon);
 	this->name = peon.name;
 	return (*this);
 }

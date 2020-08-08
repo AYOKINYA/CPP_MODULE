@@ -3,7 +3,7 @@
 PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 {}
 
-PowerFist::PowerFist(const PowerFist &copy)
+PowerFist::PowerFist(const PowerFist &copy) : AWeapon("Power Fist", 8, 50)
 {
 	*this = copy;
 }
