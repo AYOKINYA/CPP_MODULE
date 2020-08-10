@@ -5,10 +5,19 @@ Squad::Squad() : marines(nullptr), n_unit(0)
 
 Squad::Squad(Squad const &copy)
 {
-	*this = copy;
+	t_list  *elem;
+
+	this->marines = nullptr;
+	this->n_unit = 0;
+	elem = copy.marines;
+	while (elem != 0)
+	{
+		this->push(elem->unit);
+		elem = elem->next;
+	}
 }
 
-Squad& Squad::operator=(Squad const &copy)
+Squad& Squad::operator=(Squad const &squad)
 {
 	t_list  *elem;
 	t_list	*before;
@@ -23,7 +32,7 @@ Squad& Squad::operator=(Squad const &copy)
 	}
 	this->marines = nullptr;
 	this->n_unit = 0;
-	elem = copy.marines;
+	elem = squad.marines;
 	while (elem != 0)
 	{
 		this->push(elem->unit);
