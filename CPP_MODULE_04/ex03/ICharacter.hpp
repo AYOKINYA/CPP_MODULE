@@ -3,6 +3,7 @@
 
 # include <string>
 # include <iostream>
+class ICharacter;
 # include "AMateria.hpp"
 
 class ICharacter

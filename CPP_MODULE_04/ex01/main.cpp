@@ -25,4 +25,5 @@ int main()
 	me->attack(b);
 	std::cout << *me;
 	return 0;
+
 }
