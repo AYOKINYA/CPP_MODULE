@@ -1,15 +1,14 @@
 #include "Squad.hpp"
 
-
 Squad::Squad() : marines(nullptr), n_unit(0)
 {}
 
-Squad::Squad(Squad const copy)
+Squad::Squad(Squad const &copy)
 {
 	*this = copy;
 }
 
-Tactical& Squad::operator=(Squad const &copy)
+Squad& Squad::operator=(Squad const &copy)
 {
 	t_list  *elem;
 	t_list	*before;
@@ -23,7 +22,7 @@ Tactical& Squad::operator=(Squad const &copy)
 		free(before);
 	}
 	this->marines = nullptr;
-	this->n_input = 0;
+	this->n_unit = 0;
 	elem = copy.marines;
 	while (elem != 0)
 	{
@@ -41,10 +40,10 @@ Squad::~Squad()
 	elem = this->marines;
 	while (elem != 0)
 	{
-		free(elem->unit);
+		delete (elem->unit);
 		before = elem;
 		elem = elem->next;
-		free(before);
+		delete (before);
 	}
 	this->marines = 0;
 	this->n_unit = 0;
@@ -57,13 +56,18 @@ int Squad::getCount() const
 
 ISpaceMarine* Squad::getUnit(int N) const
 {
-	t_list *elem;
+	t_list	*elem;
+	int		idx;
 
 	if (N >= this->n_unit)
-		return (0);
+		return (nullptr);
 	elem = this->marines;
-	while (N--)
+	idx = 0;
+	while (idx < N)
+	{
 		elem = elem->next;
+		++idx;
+	}
 	return (elem->unit);
 }
 
@@ -85,7 +89,7 @@ int Squad::push(ISpaceMarine *ispacemarine)
 	new_elem->unit = ispacemarine;
 	new_elem->next = nullptr;
 	if (elem == 0)
-		elem = new_elem;
+		this->marines = new_elem;
 	else
 		elem->next = new_elem;
 	return (++this->n_unit);

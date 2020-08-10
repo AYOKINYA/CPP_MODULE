@@ -7,12 +7,14 @@ TacticalMarine::TacticalMarine()
 
 TacticalMarine::TacticalMarine(TacticalMarine const &copy)
 {
+    *this = copy;
     std::cout <<  "Tactical Marine ready for battle!" << std::endl;
 }
 
-Tactical& TacticalMarine::operator=(TacticalMarine const &copy)
+TacticalMarine& TacticalMarine::operator=(TacticalMarine const &tacticalmarine)
 {
-    
+    (void)tacticalmarine;
+    return (*this);
 }   
 
 TacticalMarine::~TacticalMarine()
@@ -22,7 +24,7 @@ TacticalMarine::~TacticalMarine()
 
 ISpaceMarine* TacticalMarine::clone() const
 {
-    TacticalMarine *copy = new (*this);
+    TacticalMarine *copy = new TacticalMarine(*this);
     return (copy);
 }
 

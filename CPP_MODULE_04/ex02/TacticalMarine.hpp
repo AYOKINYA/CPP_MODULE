@@ -2,11 +2,11 @@
 # define TACTICALMARINE_HPP
 # include "ISpaceMarine.hpp"
 
-class TacticalMarine
+class TacticalMarine : public ISpaceMarine
 {
     public:
             TacticalMarine();
-            ~TacticalMarine();
+            virtual ~TacticalMarine();
             TacticalMarine(TacticalMarine const &copy);
             TacticalMarine& operator=(TacticalMarine const &tacticalmarine);
             virtual ISpaceMarine* clone() const;
