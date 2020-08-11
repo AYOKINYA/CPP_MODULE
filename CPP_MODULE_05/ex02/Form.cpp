@@ -6,7 +6,7 @@ Form::Form()
 Form::~Form()
 {}
 
-Form::Form(std::string &name, int grade_to_sign, int grade_to_execute, bool sign_flag) : name(name), sign_flag(sign_flag)
+Form::Form(std::string name, int grade_to_sign, int grade_to_execute, bool sign_flag = 0) : name(name), sign_flag(sign_flag)
 {
 	if (grade_to_sign < 1 || grade_to_execute < 1)
 		Form::GradeTooHighException();
@@ -46,14 +46,19 @@ std::ostream& operator<<(std::ostream& out, Form const & form)
 	return (out);
 }
 
-std::exception Form::GradeTooHighException()
+std::exception Form::GradeTooHighException() const
 {
     throw std::out_of_range("Grade is too high! It must be greater than 1.");
 }
 
-std::exception Form::GradeTooLowException()
+std::exception Form::GradeTooLowException() const
 {
     throw std::out_of_range("Grade is too low! It must be lower than 150.");
+}
+
+std::exception Form::UnsignedFormExcetion() const
+{
+	throw std::out_of_range("It must be signed.");
 }
 
 std::string Form::getName() const
@@ -93,4 +98,14 @@ void        Form::signForm(Bureaucrat &bureaucrat)
 		std::cout << "<" << bureaucrat.getName() << "> cannot sign <" << this->getName() << "> ";
 		std::cout << "the grade is not high enough" << std::endl;
 	}
+}
+
+void		Form::check(Bureaucrat const &bureaucrat) const
+{
+	if (this->sign_flag == 0)
+		Form::UnsignedFormExcetion();
+	std::cout << "grade execute : " << this->grade_to_execute << std::endl;
+	std::cout << "grade : " << bureaucrat.getGrade() << std::endl;
+	if (bureaucrat.getGrade() > this->grade_to_execute)
+		Form::GradeTooLowException();
 }

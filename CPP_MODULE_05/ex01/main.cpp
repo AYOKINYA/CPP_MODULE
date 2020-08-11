@@ -1,25 +1,20 @@
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
     std::string name = "A";
+    std::string form_name = "X";
     try
     {
-        // Bureaucrat a(name, 149);
-        // std::cout << a;
-        // a.decrement_grade();
-        // std::cout << a;
-        // a.decrement_grade();
-        // std::cout << a;
+        Bureaucrat a(name, 50);
+        std::cout << a;
+        Form x(form_name, 70, 70, 0);
+        std::cout << x;
+        x.beSigned(a);
+        std::cout << x;
+        Form y(form_name, 40, 40, 0);
+        y.beSigned(a);
 
-        Bureaucrat b(name, 2);
-        std::cout << b;
-        b.increment_grade();
-        std::cout << b;
-        b.increment_grade();
-
-        // Bureaucrat c(name, 160);
-        // Bureaucrat d(name, -3);
     }
     catch (std::exception & e)
     {
