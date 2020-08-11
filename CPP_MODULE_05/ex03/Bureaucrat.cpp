@@ -1,0 +1,85 @@
+#include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat()
+{}
+
+Bureaucrat::Bureaucrat(std::string &name, int grade) : name(name)
+{
+	if (grade < 1)
+        Bureaucrat::GradeTooHighException();
+    else if (grade > 150)
+        Bureaucrat::GradeTooLowException();
+    else
+        this->grade = grade;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const &copy)
+{
+    *this = copy;
+}
+
+Bureaucrat& Bureaucrat::operator=(Bureaucrat const &bureaucrat)
+{
+    if (this == &bureaucrat)
+        return (*this);
+
+    this->name = bureaucrat.name;
+    this->grade = bureaucrat.grade;
+
+    return (*this);
+}
+
+Bureaucrat::~Bureaucrat()
+{}
+
+std::exception    Bureaucrat::GradeTooHighException() const
+{
+    throw std::out_of_range("Grade is too high! It must be greater than 1.");
+}
+
+std::exception    Bureaucrat::GradeTooLowException() const
+{
+    throw std::out_of_range("Grade is too low! It must be lower than 150.");
+}
+
+
+std::string Bureaucrat::getName() const
+{
+    return (this->name);
+}
+
+int         Bureaucrat::getGrade() const
+{
+    return (this->grade);
+}
+
+void        Bureaucrat::decrement_grade()
+{
+    ++this->grade;
+    if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+}
+
+void        Bureaucrat::increment_grade()
+{
+    --this->grade;
+    if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+}
+
+std::ostream& operator<<(std::ostream& out, Bureaucrat const &bureaucrat)
+{
+    out << "<" << bureaucrat.getName() << ">, bureaucrat grade ";
+    out << "<" << bureaucrat.getGrade() << ">." << std::endl;
+    return (out);
+}
+
+void        Bureaucrat::executeForm(Form const & form)
+{
+    if (form.get_sign_flag() == 0)
+        std::cout << "No sign! Cannot execute a form!" << std::endl;
+    else if (form.get_grade_to_execute() < this->grade)
+        std::cout << "No sign! Cannot execute a form!" << std::endl;
+    form.execute(*this);    
+}
+
