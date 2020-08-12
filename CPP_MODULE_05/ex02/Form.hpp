@@ -12,14 +12,14 @@ class Form;
 class Form
 {
     private:
-            std::string name;
-            int         grade_to_sign;
-            int         grade_to_execute;
-            bool        sign_flag;
+            std::string const   name;
+            int const           grade_to_sign;
+            int const           grade_to_execute;
+            bool                sign_flag;
     public:
             Form();
-            ~Form();
-            Form(std::string name, int grade_to_sign, int grade_to_execute, bool sign_flag);
+            virtual ~Form();
+            Form(std::string const &name, int const grade_to_sign, int const grade_to_execute, bool sign_flag);
             Form(Form const &copy);
             Form& operator=(Form const & form);
             std::exception GradeTooHighException() const;
@@ -30,7 +30,6 @@ class Form
             int         get_grade_to_sign() const;
             int         get_grade_to_execute() const;
             void        beSigned(Bureaucrat &bureaucrat);
-            void        signForm(Bureaucrat &bureaucrat);
             virtual void        execute(Bureaucrat const & executor) const = 0;
             void        check(Bureaucrat const &bureaucrat) const;
 };

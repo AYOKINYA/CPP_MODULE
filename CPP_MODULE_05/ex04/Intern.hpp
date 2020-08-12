@@ -17,10 +17,10 @@ class Intern
             Intern(Intern const &copy);
             Intern& operator=(Intern const &intern);
             std::exception FormNameException() const;
-            Form*   makeForm(std::string form_name, std::string form_target);
-            Form*   CreatePres(std::string &target);
-            Form*   CreateRobotomy(std::string &target);
-            Form*   CreateShrubbery(std::string &target);
+            Form*   makeForm(std::string form_name, std::string form_target) const;
+            Form*   CreatePres(std::string &target) const;
+            Form*   CreateRobotomy(std::string &target) const;
+            Form*   CreateShrubbery(std::string &target) const;
 };
 
 

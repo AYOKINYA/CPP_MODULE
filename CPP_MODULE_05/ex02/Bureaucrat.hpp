@@ -10,11 +10,11 @@ class Bureaucrat;
 class Bureaucrat
 {
     private:
-            std::string         name;
+            std::string const   name;
             int                 grade;
             Bureaucrat();
     public:
-            Bureaucrat(std::string &name, int grade);
+            Bureaucrat(std::string const &name, int grade);
             Bureaucrat(Bureaucrat const &copy);
             Bureaucrat& operator=(Bureaucrat const &bureaucrat);
             ~Bureaucrat();
@@ -24,6 +24,7 @@ class Bureaucrat
             int         getGrade() const;
             void        decrement_grade();
             void        increment_grade();
+            void        signForm(Form &form);
             void        executeForm(Form const & form);
 };
 

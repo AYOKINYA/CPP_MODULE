@@ -41,19 +41,19 @@ std::ostream& operator<<(std::ostream& out, Form const & form)
 	return (out);
 }
 
-std::exception Form::GradeTooHighException()
+std::exception Form::GradeTooHighException() const
 {
     throw std::out_of_range("Grade is too high! It must be greater than 1.");
 }
 
-std::exception Form::GradeTooLowException()
+std::exception Form::GradeTooLowException() const
 {
     throw std::out_of_range("Grade is too low! It must be lower than 150.");
 }
 
-std::exception Form::AlreadySignedException()
+std::exception Form::UnsignedFormException() const
 {
-    throw std::out_of_range("The form is already signed!");
+	throw std::out_of_range("It must be signed.");
 }
 
 std::string Form::getName() const
@@ -76,12 +76,19 @@ int         Form::get_grade_to_execute() const
 	return (this->grade_to_execute);
 }
 
-void        Form::beSigned(Bureaucrat &bureaucrat)
+void        Form::beSigned(Bureaucrat const &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->grade_to_sign)
 		Form::GradeTooLowException();
-	else if (this->sign_flag == 1)
-		Form::AlreadySignedException();
 	else
 		this->sign_flag = 1;
+}
+
+
+void		Form::check(Bureaucrat const &bureaucrat) const
+{
+	if (this->sign_flag == 0)
+		Form::UnsignedFormException();
+	if (bureaucrat.getGrade() > this->grade_to_execute)
+		Form::GradeTooLowException();
 }

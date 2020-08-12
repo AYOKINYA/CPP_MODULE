@@ -73,4 +73,31 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat const &bureaucrat)
     return (out);
 }
 
+void        Bureaucrat::signForm(Form &form) const
+{
+	if (form.get_sign_flag())
+    {
+        std::cout << "<" << this->getName() << "> cannot sign <" << form.getName() << "> ";
+		std::cout << "the form is already signed" << std::endl;
+    }
+	else if (form.get_grade_to_sign() < this->grade)
+	{
+		std::cout << "<" << this->getName() << "> cannot sign <" << form.getName() << "> ";
+		std::cout << "The grade is not high enough to sign." << std::endl;
+	}
+    else
+        std::cout << this->getName() << " signs " << form.getName() << std::endl;
+    form.beSigned(*this);
+}
+
+void        Bureaucrat::executeForm(Form const & form) const
+{
+    if (form.get_sign_flag() == 0)
+        std::cout << "No sign! Cannot execute a form!" << std::endl;
+    else if (form.get_grade_to_execute() < this->grade)
+        std::cout << "Not Enough Grade! Cannot execute a form!" << std::endl;
+    else
+        std::cout << this->getName() << " executes " << form.getName() << std::endl;
+    form.execute(*this);   
+}
 

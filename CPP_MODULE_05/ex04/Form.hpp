@@ -29,7 +29,7 @@ class Form
             bool        get_sign_flag() const;
             int         get_grade_to_sign() const;
             int         get_grade_to_execute() const;
-            void        beSigned(Bureaucrat &bureaucrat);
+            void        beSigned(Bureaucrat const &bureaucrat);
             virtual void        execute(Bureaucrat const & executor) const = 0;
             void        check(Bureaucrat const &bureaucrat) const;
 };

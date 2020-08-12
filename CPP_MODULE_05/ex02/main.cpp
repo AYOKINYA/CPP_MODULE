@@ -14,7 +14,7 @@ int main(void)
 
     ShrubberyCreationForm shrub(target);
     std::cout << shrub;
-    shrub.beSigned(a);
+    a.signForm(shrub);
     shrub.execute(a);
     std::cout << a;
 
@@ -31,11 +31,22 @@ int main(void)
     robot.execute(b);
     b.executeForm(robot);
     b.executeForm(robot);
-    
+
+    std::cout << "===========" << std::endl;
     try
     {
         PresidentialPardonForm pres2 = PresidentialPardonForm("pres2");
         a.executeForm(pres2);
+    }
+    catch (std::exception & e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "===========" << std::endl;
+    try
+    {
+        pres.beSigned(a);
+        pres.execute(a);
     }
     catch (std::exception & e)
     {

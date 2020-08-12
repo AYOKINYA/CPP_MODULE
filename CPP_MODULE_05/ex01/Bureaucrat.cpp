@@ -3,7 +3,7 @@
 Bureaucrat::Bureaucrat()
 {}
 
-Bureaucrat::Bureaucrat(std::string &name, int grade) : name(name)
+Bureaucrat::Bureaucrat(std::string const &name, int grade) : name(name)
 {
 	if (grade < 1)
         Bureaucrat::GradeTooHighException();
@@ -23,7 +23,6 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const &bureaucrat)
     if (this == &bureaucrat)
         return (*this);
 
-    this->name = bureaucrat.name;
     this->grade = bureaucrat.grade;
 
     return (*this);
@@ -72,6 +71,23 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat const &bureaucrat)
     out << "<" << bureaucrat.getName() << ">, bureaucrat grade ";
     out << "<" << bureaucrat.getGrade() << ">." << std::endl;
     return (out);
+}
+
+void        Bureaucrat::signForm(Form &form)
+{
+	if (form.get_sign_flag())
+    {
+        std::cout << "<" << this->getName() << "> cannot sign <" << form.getName() << "> ";
+		std::cout << "the form is already signed" << std::endl;
+    }
+	else if (form.get_grade_to_sign() < this->grade)
+	{
+		std::cout << "<" << this->getName() << "> cannot sign <" << form.getName() << "> ";
+		std::cout << "The grade is not high enough to sign." << std::endl;
+	}
+    else
+        std::cout << this->getName() << " signs " << form.getName() << std::endl;
+    form.beSigned(*this);
 }
 
 

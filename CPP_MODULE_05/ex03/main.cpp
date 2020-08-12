@@ -2,60 +2,36 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
-    std::string name = "A";
-    std::string form_name = "X";
-    std::string target = "home";
-    
-    Bureaucrat a(name, 50);
-    std::cout << a;
+    Intern someRandomIntern;
+    Intern intern1;
+    Intern intern2;
 
-    ShrubberyCreationForm shrub(target);
-    std::cout << shrub;
-    shrub.beSigned(a);
-    shrub.execute(a);
-    std::cout << a;
+    Form *rrf;
+    Form *f1;
+    Form *f2;
 
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    std::cout << *rrf;
+    f1 = intern1.makeForm("presidential pardon", "intern1");
+    std::cout << *f1;
+    f2 = intern1.makeForm("shrubbery creation", "intern2");
+    std::cout << *f2;
 
-    Bureaucrat b(name, 3);
-    std::cout << b;
-    target = "Gaepo";
-    PresidentialPardonForm pres(target);
-    pres.beSigned(b);
-    pres.execute(b);
-
-    RobotomyRequestForm robot("robot");
-    robot.beSigned(b);
-    robot.execute(b);
-    b.executeForm(robot);
-    b.executeForm(robot);
-    
+    std::cout << "===========" << std::endl;
     try
     {
-        PresidentialPardonForm pres2 = PresidentialPardonForm("pres2");
-        a.executeForm(pres2);
+        f2 = intern1.makeForm("invincible authority", "invincible");
     }
     catch (std::exception & e)
     {
         std::cerr << e.what() << std::endl;
     }
     std::cout << "===========" << std::endl;
-    try
-    {
-        pres.beSigned(a);
-        pres.execute(a);
-    }
-    catch (std::exception & e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
 
-    // Intern someRandomIntern;
-    // Form *rrf;
-
-    // rrf = someRandomIntern("robotomy request", Bender);
 
     return (0);
 }

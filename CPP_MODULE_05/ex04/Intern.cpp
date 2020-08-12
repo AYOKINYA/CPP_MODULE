@@ -23,7 +23,7 @@ std::exception Intern::FormNameException() const
 	throw std::invalid_argument("the form is not available.");
 }
 
-Form*   Intern::makeForm(std::string form_name, std::string form_target)
+Form*   Intern::makeForm(std::string form_name, std::string form_target) const
 {
     std::string form_names[3] = 
     {
@@ -32,7 +32,7 @@ Form*   Intern::makeForm(std::string form_name, std::string form_target)
         "shrubbery creation"
     };
 
-    Form*   (Intern:: * create[3])(std::string & target) = {
+    Form*   (Intern:: * create[3])(std::string & target) const = {
         &Intern::CreatePres,
         &Intern::CreateRobotomy,
         &Intern::CreateShrubbery
@@ -49,17 +49,17 @@ Form*   Intern::makeForm(std::string form_name, std::string form_target)
     return (form);
 }
 
-Form*   Intern::CreatePres(std::string &target)
+Form*   Intern::CreatePres(std::string &target) const
 {
     return (new PresidentialPardonForm(target));
 }
 
-Form*   Intern::CreateRobotomy(std::string &target)
+Form*   Intern::CreateRobotomy(std::string &target) const
 {
     return (new RobotomyRequestForm(target));
 }
 
-Form*   Intern::CreateShrubbery(std::string &target)
+Form*   Intern::CreateShrubbery(std::string &target) const
 {
     return (new ShrubberyCreationForm(target));
 }
