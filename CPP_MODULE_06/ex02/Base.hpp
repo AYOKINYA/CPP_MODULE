@@ -2,7 +2,7 @@
 # define Base_HPP
 # include <string>
 # include <iostream>
-# include <ctime>
+# include <random>
 
 class Base
 {

@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include <ctime>
+#include <random>
 
 struct Data { 
 	std::string s1;
@@ -15,17 +15,20 @@ void *serialize(void)
 	std::string alphanum = "0123456789" \
 		"abcdefghijklmopqrstuvxyz" \
 		"ABCDEFGHIJKLMOPQRSTUVXYZ";
-	int alphanumLength = alphanum.length();
 	
+	std::random_device rd;
+	std::mt19937 mt(rd());
+	std::uniform_int_distribution<int> dis(0, alphanum.length() - 1);
+
 	res = new char[20];
 
 	for (int i = 0; i < 8; i++)
-		res[i] = alphanum[rand() % alphanumLength];
+		res[i] = alphanum[dis(mt)];
 	
 	*reinterpret_cast<int*>(res + 8) = rand();
 	
 	for (int i = 0; i < 8; i++)
-		res[i + 12] = alphanum[rand() % alphanumLength];
+		res[i + 12] = alphanum[dis(mt)];
 	
 	return (res);
 }
@@ -45,12 +48,10 @@ int main(void)
 	void	*s;
 	char	*ptr;
 	Data	*d;
-	
-	srand((unsigned int)time(0));
 
 	s = serialize();
 	ptr = reinterpret_cast<char*>(s);
-	std::cout << "======serialization======";
+	std::cout << "======serialization======" << std::endl;
 	for (int i = 0; i < 8; ++i)
 		std::cout << ptr[i];
 	std::cout << *reinterpret_cast<int*>(ptr + 8);
