@@ -54,7 +54,7 @@ void	printDouble(Conversion &conversion)
 {
 	double d;
 
-	std::cout << "Double: ";
+	std::cout << "double: ";
 	try
 	{
 		d = static_cast<double>(conversion);

@@ -30,7 +30,7 @@ std::exception Conversion::ImpossibleException() const
 
 std::exception Conversion::NonDisplayableException() const
 {
-	throw std::invalid_argument("NonDisplayable");
+	throw std::invalid_argument("Non Displayable");
 }
 
 
