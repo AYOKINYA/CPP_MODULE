@@ -4,7 +4,7 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =  convert.cpp
+SRCS =  Conversion.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
