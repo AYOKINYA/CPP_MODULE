@@ -66,7 +66,7 @@ int main(void)
 	std::cout << d->s2 << std::endl;
 
 	delete (d);
-	delete ((char *)s);
+	delete ((char *)s); // 왜 이건 지워도 leak이 아닐까?
 
 	return (0);
 }
