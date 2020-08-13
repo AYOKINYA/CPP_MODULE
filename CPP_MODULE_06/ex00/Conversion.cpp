@@ -78,7 +78,7 @@ Conversion::operator float() const
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		Conversion::ImpossibleException();
 	}
 	return (f);
 }
@@ -94,7 +94,7 @@ Conversion::operator double() const
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		Conversion::ImpossibleException();
 	}
 	return (d);
 }

@@ -19,15 +19,13 @@ void *serialize(void)
 	
 	res = new char[20];
 
-	srand((unsigned int)time(0));
-
 	for (int i = 0; i < 8; i++)
 		res[i] = alphanum[rand() % alphanumLength];
 	
 	*reinterpret_cast<int*>(res + 8) = rand();
 	
 	for (int i = 0; i < 8; i++)
-		res[i + 12] = aalphanum[rand() % alphanumLength];
+		res[i + 12] = alphanum[rand() % alphanumLength];
 	
 	return (res);
 }
@@ -44,15 +42,30 @@ Data *deserialize(void *res)
 
 int main(void)
 {
-	char *s;
-	Data *d;
+	void	*s;
+	char	*ptr;
+	Data	*d;
 	
-	s = (char *)serialize();
-	
+	srand((unsigned int)time(0));
+
+	s = serialize();
+	ptr = reinterpret_cast<char*>(s);
+	std::cout << "======serialization======";
+	for (int i = 0; i < 8; ++i)
+		std::cout << ptr[i];
+	std::cout << *reinterpret_cast<int*>(ptr + 8);
+	for (int i = 12; i < 20; ++i)
+		std::cout << ptr[i];
+	std::cout << std::endl;
+
+	std::cout << "===deserialization===" << std::endl;
 	d = deserialize(s);
 	std::cout << d->s1 << std::endl;
 	std::cout << d->n << std::endl;
 	std::cout << d->s2 << std::endl;
+
+	delete (d);
+	delete ((char *)s);
 
 	return (0);
 }

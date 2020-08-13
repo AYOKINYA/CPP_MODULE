@@ -4,7 +4,7 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -I .
 
-SRCS =  A.cpp B.cpp C.cpp main.cpp
+SRCS =  Base.cpp A.cpp B.cpp C.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
