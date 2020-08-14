@@ -6,7 +6,7 @@
 /*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 20:12:04 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/14 20:12:04 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/14 20:16:02 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(void)
 	for (unsigned int i = 0; i < arr_copy.size(); ++i)
 	{
 		arr_copy[i] = i;
-		std::cout << arr_copy[i] << "f" << std::endl;
+		std::cout << arr_copy[i]  << std::endl;
 	}
 	std::cout << " ============ " << std::endl;
 
@@ -39,7 +39,7 @@ int main(void)
 	for (unsigned int i = 0; i < arr2.size(); ++i)
 	{
 		arr2[i] = i;
-		std::cout << arr2[i] << "f" << std::endl;
+		std::cout << arr2[i] << ".0f" << std::endl;
 	}
 	std::cout << " ============ " << std::endl;
 
@@ -47,7 +47,7 @@ int main(void)
 	for (unsigned int i = 0; i < arr3.size(); ++i)
 	{
 		arr3[i] = i;
-		std::cout << arr3[i] << "f" << std::endl;
+		std::cout << arr3[i] << ".0" << std::endl;
 	}
 	std::cout << " ============ " << std::endl;
 
@@ -80,6 +80,6 @@ int main(void)
 	}
 
 	std::cout << " ============ " << std::endl;
-	while (1) { };
+
 	return (0);
 }
