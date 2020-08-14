@@ -2,9 +2,9 @@ NAME = ex02
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I .
 
-SRCS =  Array.cpp main.cpp
+SRCS =  main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
