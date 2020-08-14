@@ -31,8 +31,8 @@ Array<T>::Array() : arr_len(0), arr(nullptr)
 template <typename T>
 Array<T>::~Array()
 {
-	std::cout << "destructor called" << std::endl;
-	delete[] this->arr;
+	if (this->arr != nullptr)
+		delete[] this->arr;
 }
 
 template <typename T>
@@ -42,7 +42,7 @@ Array<T>::Array(unsigned int n) : arr_len(n), arr(nullptr)
 }
 
 template <typename T>
-Array<T>::Array(Array const &copy)
+Array<T>::Array(Array const &copy) : arr_len(0), arr(nullptr)
 {
 	*this = copy;
 }
@@ -53,13 +53,12 @@ Array<T>& Array<T>::operator=(Array const &array)
 	if (this == &array)
 		return (*this);
 
-	if (this->arr)
-	{
+	if (this->arr != nullptr)
 		delete[] this->arr;
-		this->arr = nullptr;
-	}
+
 	this->arr_len = array.arr_len;
 	this->arr = new T[this->arr_len];
+
 	for (unsigned int i = 0; i < this->arr_len; ++i)
 		arr[i] = array.arr[i];
 
@@ -75,7 +74,7 @@ std::exception Array<T>::IndexOutOfRange() const
 template <typename T>
 T& Array<T>::operator[](const unsigned int index) const
 {
-	if (index < 0 || index >= this->arr_len)
+	if (index >= this->arr_len)
 		Array<T>::IndexOutOfRange();
 
 	return (arr[index]);
