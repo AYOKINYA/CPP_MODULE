@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Conversion.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 19:40:27 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 19:40:28 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Conversion.hpp"
 
 Conversion::Conversion()
@@ -10,7 +22,7 @@ Conversion::Conversion(std::string input) : input(input)
 Conversion::~Conversion()
 {}
 
-Conversion::Conversion(Conversion const &copy)
+Conversion::Conversion(Conversion const &copy) : input("")
 {
 	*this = copy;
 }

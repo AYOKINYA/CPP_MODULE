@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 19:59:56 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 19:59:57 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Character.hpp"
 
 Character::Character()
@@ -7,7 +19,8 @@ Character::Character(std::string const &name) :
 		name(name), AP(40), current_weapon(nullptr)
 {}
 
-Character::Character(const Character& copy)
+Character::Character(const Character& copy):
+		name(copy.name), AP(40), current_weapon(nullptr)
 {
 	*this = copy;	
 }

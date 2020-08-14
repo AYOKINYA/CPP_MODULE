@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 19:54:32 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 19:54:36 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
@@ -10,7 +22,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form("tmp", 72, 45, 0), target(target)
 {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy) : Form("tmp", 72, 45, 0)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy) : Form("tmp", 72, 45, 0), target(copy.target)
 {
     *this = copy;
 }

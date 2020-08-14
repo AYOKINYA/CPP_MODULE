@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 20:04:24 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 20:04:24 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Character.hpp"
 
 Character::Character()
@@ -15,11 +27,8 @@ Character::~Character()
 		delete (this->inventory[i]);
 }
 
-Character::Character(Character const & copy)
+Character::Character(Character const & copy) : name(copy.name), i_count(0)
 {
-    this->name = copy.name;
-	this->i_count = 0;
-
 	for (unsigned int i = 0; i < copy.i_count; ++i)
 		this->equip(copy.inventory[i]->clone());
 	for (unsigned int i = this->i_count; i < 4; ++i)

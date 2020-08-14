@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 19:54:49 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 19:55:26 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
@@ -10,7 +22,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 ShrubberyCreationForm::ShrubberyCreationForm(std::string &target) : Form("tmp", 145, 137, 0), target(target)
 {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy) : Form("tmp", 145, 137, 0)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy) : Form("tmp", 145, 137, 0), target(copy.target)
 {
     *this = copy;
 }
@@ -22,12 +34,6 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
     Form::operator=(ShrubberyCreationForm);
     return (*this);
 }
-
-// std::ostream& operator<<(std::ostream& out, ShrubberyCreationForm const & ShrubberyCreationForm)
-// {
-// 	out << 
-// 	return (out);
-// }
 
 void		ShrubberyCreationForm::tree(std::ofstream& writefile) const
 {

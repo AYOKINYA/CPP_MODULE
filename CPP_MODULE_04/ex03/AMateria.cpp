@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 20:03:57 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 20:03:58 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AMateria.hpp"
 
 AMateria::AMateria(std::string const & type) : type(type), _xp(0)
@@ -9,7 +21,7 @@ AMateria::AMateria()
 AMateria::~AMateria()
 {}
 
-AMateria::AMateria(AMateria const &copy)
+AMateria::AMateria(AMateria const &copy) : type(copy.type), _xp(0)
 {
     *this = copy;
 }

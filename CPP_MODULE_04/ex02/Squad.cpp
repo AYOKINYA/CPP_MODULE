@@ -1,14 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Squad.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 20:02:28 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 20:06:22 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Squad.hpp"
 
 Squad::Squad() : marines(nullptr), n_unit(0)
 {}
 
-Squad::Squad(Squad const &copy)
+Squad::Squad(Squad const &copy) : marines(nullptr), n_unit(0)
 {
 	t_list  *elem;
 
-	this->marines = nullptr;
-	this->n_unit = 0;
 	elem = copy.marines;
 	while (elem != 0)
 	{

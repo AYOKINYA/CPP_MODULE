@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 19:45:18 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 19:45:35 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHUBBERYCREATIONFORM_HPP
 # define SHUBBERYCREATIONFORM_HPP
 
@@ -18,8 +30,6 @@ class ShrubberyCreationForm : public Form
             void        execute(Bureaucrat const & executor) const;
             void        tree(std::ofstream& writefile) const;
 };
-
-// std::ostream& operator<<(std::ostream& out, ShrubberyCreationForm const & ShrubberyCreationForm);
 
 
 #endif

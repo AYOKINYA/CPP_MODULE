@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Enemy.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 20:00:15 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 20:00:15 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Enemy.hpp"
 
 Enemy::Enemy()
@@ -7,7 +19,7 @@ Enemy::Enemy()
 Enemy::Enemy(int hp, std::string const & type) : hp(hp), type(type)
 {}
 
-Enemy::Enemy(const Enemy &copy)
+Enemy::Enemy(const Enemy &copy) : hp(copy.hp), type(copy.type)
 {
 	*this = copy;
 }

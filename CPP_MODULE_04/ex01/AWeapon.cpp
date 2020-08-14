@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AWeapon.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 19:59:31 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 19:59:32 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AWeapon.hpp"
 
 AWeapon::AWeapon(std::string const &name, int apcost, int damage) :
 			name(name), apcost(apcost), damage(damage) {};
 
-AWeapon::AWeapon(const AWeapon& copy)
+AWeapon::AWeapon(const AWeapon& copy) : name(copy.name), apcost(copy.apcost), damage(copy.damage)
 {
 	*this = copy;	
 }

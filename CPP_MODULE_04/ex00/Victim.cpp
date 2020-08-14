@@ -21,7 +21,7 @@ Victim::~Victim()
 	std::cout << " just died for no apparent reason!" << std::endl;
 }
 
-Victim::Victim(const Victim &copy)
+Victim::Victim(const Victim &copy) : name(copy.name)
 {
 	*this = copy;
 	std::cout << "Some random victim called ";

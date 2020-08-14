@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Sorcerer.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 19:46:35 by jkang             #+#    #+#             */
+/*   Updated: 2020/08/14 19:46:41 by jkang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Sorcerer.hpp"
 
 Sorcerer::Sorcerer(std::string name, std::string title) : name(name), title(title)
@@ -11,7 +23,7 @@ Sorcerer::~Sorcerer()
 	std::cout << ", is dead. Consequences will never be the same!" << std::endl;
 }
 
-Sorcerer::Sorcerer(const Sorcerer &copy)
+Sorcerer::Sorcerer(const Sorcerer &copy) : name(copy.name), title(copy.title)
 {
 	*this = copy;
 	std::cout << this->name << ", " << this->title << ", is born!" << std::endl;
