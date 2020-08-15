@@ -6,7 +6,7 @@
 /*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 20:12:01 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/14 20:12:02 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/14 20:26:27 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Array
 			Array(Array const &copy);
 			Array& operator=(Array const &array);
 			std::exception IndexOutOfRange() const;
-			T & operator[](unsigned int index) const;
+			T & operator[](const unsigned int &index) const;
 			unsigned int	size(void) const;
 };
 
@@ -84,7 +84,7 @@ std::exception Array<T>::IndexOutOfRange() const
 }
 
 template <typename T>
-T& Array<T>::operator[](const unsigned int index) const
+T& Array<T>::operator[](const unsigned int &index) const
 {
 	if (index >= this->arr_len)
 		Array<T>::IndexOutOfRange();
