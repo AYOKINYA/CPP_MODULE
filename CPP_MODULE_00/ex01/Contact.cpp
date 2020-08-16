@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkang <jkang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 16:47:00 by jkang             #+#    #+#             */
-/*   Updated: 2020/07/30 17:33:09 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/16 16:05:13 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void		Contact::set_items(void)
 	
 	for (int i = 0; i < 11; ++i)
 	{
+		if (std::cin.eof())
+		{
+			std::cin.clear();
+			std::cout << std::endl;
+			exit(0);
+		}
 		std::cout << this->prints[i] << " :";
 		std::getline(std::cin, this->items[i]);
 	}
