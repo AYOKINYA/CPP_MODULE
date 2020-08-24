@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkang <jkang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 10:51:36 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/15 10:51:37 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/24 14:40:19 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 
 FragTrap::FragTrap(): ClapTrap()
 {
+	this->Hit_points = 100;
+	this->Max_hit_points = 100;
+	this->Energy_points = 100;
+	this->Max_energy_points = 100;
+	this->Level = 1;
+	this->Name = Name;
+	this->Melee_attack_damage = 30;
+	this->Ranged_attack_damage = 20;
+	this->Armor_damage_reduction = 5;
 	std::cout << "A FragTrap is constructed." << std::endl;
 }
 

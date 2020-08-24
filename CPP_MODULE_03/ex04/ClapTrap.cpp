@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkang <jkang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 10:51:30 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/15 10:51:31 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/24 14:40:08 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 
 ClapTrap::ClapTrap()
 {
+	this->Hit_points = 100;
+	this->Max_hit_points = 100;
+	this->Energy_points = 100;
+	this->Max_energy_points = 100;
+	this->Level = 1;
+	this->Name = "anonymous";
+	this->Melee_attack_damage = 0;
+	this->Ranged_attack_damage = 0;
+	this->Armor_damage_reduction = 0;
 	std::cout << "A ClapTrap is constructed." << std::endl;
 }
 

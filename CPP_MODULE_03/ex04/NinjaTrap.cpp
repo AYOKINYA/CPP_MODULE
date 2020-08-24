@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkang <jkang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 10:51:44 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/15 10:51:45 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/24 14:41:55 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 
 NinjaTrap::NinjaTrap(): ClapTrap()
 {
+	this->Hit_points = 60;
+	this->Max_hit_points = 60;
+	this->Energy_points = 120;
+	this->Max_energy_points = 120;
+	this->Level = 1;
+	this->Name = "anonymous";
+	this->Melee_attack_damage = 60;
+	this->Ranged_attack_damage = 5;
+	this->Armor_damage_reduction = 0;
 	std::cout << "A NinjaTrap is constructed." << std::endl;
 }
 

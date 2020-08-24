@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkang <jkang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 10:51:50 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/15 10:51:51 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/24 14:42:08 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
+	this->Hit_points = 100;
+	this->Max_hit_points = 100;
+	this->Energy_points = 50;
+	this->Max_energy_points = 50;
+	this->Level = 1;
+	this->Name = "anonymous";
+	this->Melee_attack_damage = 20;
+	this->Ranged_attack_damage = 15;
+	this->Armor_damage_reduction = 3;
+	
 	std::cout << "A ScavTrap is constructed." << std::endl;
 }
 
