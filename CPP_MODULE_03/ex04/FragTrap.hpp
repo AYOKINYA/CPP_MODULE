@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkang <jkang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 10:51:39 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/15 10:51:39 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/24 14:52:13 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class FragTrap : virtual public ClapTrap
 			FragTrap(std::string Name);
 			FragTrap(const FragTrap& copy);
 			FragTrap& operator= (const FragTrap &fragtrap);
-			~FragTrap();
+			virtual ~FragTrap();
 			void	    vaulthunter_dot_exe(std::string const & target);
 };
 

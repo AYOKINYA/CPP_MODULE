@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkang <jkang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 10:51:47 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/15 10:51:48 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/24 14:52:07 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class NinjaTrap : virtual public ClapTrap
 			NinjaTrap(std::string Name);
 			NinjaTrap(const NinjaTrap& copy);
 			NinjaTrap& operator= (const NinjaTrap &NinjaTrap);
-			~NinjaTrap();
+			virtual ~NinjaTrap();
             void        ninjaShoebox(FragTrap &trap);
             void        ninjaShoebox(ScavTrap &trap);
             void        ninjaShoebox(ClapTrap &trap);

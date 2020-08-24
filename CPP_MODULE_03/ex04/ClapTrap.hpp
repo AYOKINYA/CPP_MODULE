@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkang <jkang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkang <jkang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 10:51:33 by jkang             #+#    #+#             */
-/*   Updated: 2020/08/15 10:51:34 by jkang            ###   ########.fr       */
+/*   Updated: 2020/08/24 14:52:28 by jkang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ClapTrap
 			ClapTrap(std::string Name);
 			ClapTrap(const ClapTrap& copy);
 			ClapTrap& operator= (const ClapTrap &ClapTrap);
-			~ClapTrap();
+			virtual ~ClapTrap();
 			void	    rangedAttack(std::string const & target);
 			void	    meleeAttack(std::string const & target);
 			void	    takeDamage(unsigned int amount);
